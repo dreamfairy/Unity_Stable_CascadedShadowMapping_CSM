@@ -3,7 +3,7 @@ Stable and unflick CascadedShadowMapping
 稳定，无抖动CSM
 
 原po主未解决阴影平移和旋转的阴影边缘抖动，闪烁问题， 本仓库在原po主基础上修改
-原po住仓库地址:https://github.com/chenyong2github/CascadedShadowMapping
+原po主仓库地址:https://github.com/chenyong2github/CascadedShadowMapping
 
 
 ![](https://github.com/dreamfairy/Unity_Stable_CascadedShadowMapping_CSM/blob/main/Screenshots/Stable/1.gif?raw=true)
