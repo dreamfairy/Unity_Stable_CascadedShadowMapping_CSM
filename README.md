@@ -11,6 +11,7 @@ Stable and unflick CascadedShadowMapping
 
 
 修改区域
+
 1.平移抖动解决：远近平面变换到主相机时，要在计算 平面宽度->阴影贴图纹理 映射，并取整
 ```
 for (int i = 0; i < 4; i++)
