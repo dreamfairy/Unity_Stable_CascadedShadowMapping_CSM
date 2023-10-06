@@ -178,27 +178,6 @@ public class CascadedShadowMapping : MonoBehaviour
                 lightCamera_Splits_fcs[k].farCorners[i] = dirLightCameraSplits[k].transform.InverseTransformPoint(mainCamera_Splits_fcs[k].farCorners[i]);
             }
 
-            float disMainCameraDisW =
-                Vector3.Magnitude(mainCamera_Splits_fcs[k].nearCorners[1] - mainCamera_Splits_fcs[k].nearCorners[0]);
-            float disMainCameraDisH =  Vector3.Magnitude(mainCamera_Splits_fcs[k].nearCorners[3] - mainCamera_Splits_fcs[k].nearCorners[0]);
-
-            float maxMainCamDis = Mathf.Max(disMainCameraDisH, disMainCameraDisW) / depthTextures[0].width;
-
-            for (int i = 0; i < 4; i++)
-            {
-                Vector3 fixedPos = lightCamera_Splits_fcs[k].nearCorners[i];
-                fixedPos.x = Mathf.Floor(fixedPos.x / maxMainCamDis) * maxMainCamDis;
-                fixedPos.y = Mathf.Floor(fixedPos.y / maxMainCamDis) * maxMainCamDis;
-                fixedPos.z = Mathf.Floor(fixedPos.z);
-                lightCamera_Splits_fcs[k].nearCorners[i] = fixedPos;
-
-                fixedPos = lightCamera_Splits_fcs[k].farCorners[i];
-                fixedPos.x = Mathf.Floor(fixedPos.x / maxMainCamDis) * maxMainCamDis;
-                fixedPos.y = Mathf.Floor(fixedPos.y / maxMainCamDis) * maxMainCamDis;
-                fixedPos.z = Mathf.Floor(fixedPos.z);
-                lightCamera_Splits_fcs[k].farCorners[i] = fixedPos;
-            }
-
             float[] xs = { lightCamera_Splits_fcs[k].nearCorners[0].x, lightCamera_Splits_fcs[k].nearCorners[1].x, lightCamera_Splits_fcs[k].nearCorners[2].x, lightCamera_Splits_fcs[k].nearCorners[3].x,
                        lightCamera_Splits_fcs[k].farCorners[0].x, lightCamera_Splits_fcs[k].farCorners[1].x, lightCamera_Splits_fcs[k].farCorners[2].x, lightCamera_Splits_fcs[k].farCorners[3].x };
 
